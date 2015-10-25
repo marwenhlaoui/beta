@@ -3,6 +3,7 @@ danger:
     remp_all: Veuillez remplir tous les champs obligatoires avant d'envoyer le formulaire.<br>
     hack: Vous ne disposez pas des droits necessaires pour effectuer cette operation ...<br>
     notup_img: Le fichier que vous avez ajouté n'est pas une image...!!
+    notup_img: Le fichier que vous avez ajouté n'est pas une image...!!
 
 success:
 	new_compte: <h4>Félicitations ! </h4>Votre nouveau <a href='login'>compte</a> a été créé avec succès ...<br>
@@ -13,7 +14,7 @@ success:
 	editpost: Votre modification à été effectué avec succès ...<br>
 	success: Cette opération a été effectuée avec succès ...<br>
 warning:
-	now_logout:Vous êtes maintenant déconnecté...
+	now_logout: Vous êtes maintenant déconnecté...
 	hack: Le système de sécurité vous punira ... <br> Pour éviter l'exclusion communiquez avec le webmaster ...<br>
 info:
 	wait_wm: Attendre la confirmation de webmaster ... !<br>

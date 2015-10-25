@@ -51,9 +51,10 @@
 
 			}catch(PDOException $e){
 				if (Conf::$debug >= 1) {
-					die($e->getMessage());
+					//die('hhh'.$e->getMessage());
+					MFVNoDatabase($e->getMessage());
 				}else{
-					die('Impossible de se connecter à la base de donnée');
+					MFVNoDatabase();
 				}
 				
 			}
@@ -63,6 +64,22 @@
 
 
 
+
+		/**
+		** fonction findTab (find TABLE )
+		**/
+		
+		public function findTab(){ 
+			$ymlfile = new AppClassYML(); 
+			$db = $ymlfile->load("parameters","conf");
+			$parameters = (HOST == "local") ? 'parameters_local' : 'parameters_host' ; 
+			$sql = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '".$db[$parameters]['db_name']."'";
+
+			$pre = $this->db->prepare($sql);
+			$pre->execute();
+			$data =  $pre->fetchAll(PDO::FETCH_OBJ); 
+			return $data;
+		}
 
 		/**
 		** fonction CreatTab (CREATE TABLE )
@@ -154,7 +171,7 @@
 
 							$sql .= ' LIMIT '.$req['limit'];//.$req['limit'];	
 						}
-			 //die($sql); 
+			 //die($sql);  
 
 			$pre = $this->db->prepare($sql);
 			$pre->execute();
@@ -328,7 +345,7 @@
 		**/
 		
 		public function findCount($conditions){
-			$primaryKey = 'id';
+			$primaryKey = 'id'; 
 			$res = $this->findFirst(array(
 					'fields' => 'COUNT(*) as count',
 					'conditions' => $conditions
@@ -408,8 +425,8 @@
 			    	$set = implode(' , ', $set);
 
 			$sql = "INSERT INTO {$this->table} ({$fields}) VALUES ({$set});";
-					  // die($sql);
-			
+					   // die($sql);
+			 
 
 			        $pre = $this->db->prepare($sql);
 					$pre->execute($d);
@@ -470,8 +487,7 @@
 			    }else{ 
 			    	$sql = "UPDATE {$this->table} SET {$set} WHERE  {$primaryKey} = {$id} AND {$cond}";
 			    }
-			   //die($sql);
-			
+			   //die($sql); 
 
 				$pre = $this->db->prepare($sql);
 				$pre->execute($d);

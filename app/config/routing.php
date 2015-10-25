@@ -3,17 +3,26 @@
 
 /***************  Base *****************************************/
 
-	Router::connect('','pages/home');//home page   
-	Router::connect('about','pages/about');//home page   
-	Router::connect('contact','pages/contact');//home page    
-	//Router::connect('watch/:slug','films/watch/slug:([0-9-a-z-A-Z]+)');//film page exemple   
+	Router::connect('','pages/home');//home page 
+	Router::connect('test','pages/test');//home page      
+
+/***************  login *****************************************/
+
+	Router::connect('login','users/login');//login page  
+	Router::connect('logout','users/logout');//logout   
 
 /***************  Admin *****************************************/
 
-	Router::connect('login','users/login');//login page  
-	Router::connect('logout','users/logout');//logout  
-	Router::connect('inscription','users/inscription');//Inscription page    
-
 	Router::connect('admin','cms/dashbord');//dashbord page  
+	Router::connect('admin/delete/:id','cms/deleteData/id:([0-9]+)');//delete page   
+	###### users
+	Router::connect('admin/users','cms/users');//users page  
+	Router::connect('admin/user','cms/users');//users page 
+	Router::connect('admin/user/add','cms/adduser');//add new user page  
+	Router::connect('admin/user/edit/:id','cms/edituser/id:([0-9]+)');//edit user page  
+	###### Inbox
+	Router::connect('admin/inbox','cms/inbox');//users page       
+	
 
-?>
+/***************  web *****************************************/
+	  

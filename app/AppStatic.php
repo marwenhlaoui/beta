@@ -1,8 +1,8 @@
 <?php 
 
 	$debut = microtime(true);
-	$hostdomain = "";//your domain here
-	$siteName = "";//your Web site Name here
+	$hostdomain = "marvision.com";
+	$siteName = "Marvision Framework";
 	$siteLangue = "fr";
 
 	
@@ -31,7 +31,10 @@ if (isset($_SERVER['HTTP_CLIENT_IP']) || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
 	define ('VENDOR',ROOT.'/vendor');//url de fiche core 
 	define ('CORE',ROOT.'/vendor/core');//url de fiche core 
 	define ('WEBROOT',WEB.'/view/core');//url de fiche core  
+	define ('ROOTMODEL',WEB.'/model');//url de fiche core  
 
-	define ('BOOT',BASE_SRC.'/_BOOT');//url de fiche core 
+	define ('SRC_BOOT',BASE_SRC.'/_BOOT');//url de fiche boot
 	define ('SRC_WEB',BASE_SRC.'/_WEB');//url de fiche src web 
+	define ('SRC_CMS',BASE_SRC.'/_CMS');//url de fiche src web
+	define ('SRC_UPLOAD',BASE_SRC.'/upload');//url de fiche src upload
 ?>

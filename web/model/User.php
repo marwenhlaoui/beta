@@ -71,12 +71,37 @@ $model = array(
 	"active" 	=> array(
 		"type" 	=> "INT",
 		"size"	=> "1"
+	),  
+# @ users.ip
+#########################
+	"ip" 	=> array(
+		"type" 	=> "VARCHAR",
+		"size" 	=> "50"
+	),
+# @ users.ref
+#########################
+	"ref" 	=> array(
+		"type" 	=> "BOOLEAN"
+	),
+# @ users.birthday
+#########################
+	"birthday" 	=> array(
+		"type" 	=> "DATE"
+	),
+# @ users.sex
+#########################
+	"sexe" 	=> array(
+		"type" 	=> "BOOLEAN"
 	),
 # @ users.description
 #########################
 	"description" 	=> array(
 		"type" 	=> "TEXT"
 	),
-######################################################################################
-
+# @ users.inscription
+#########################
+	"inscription" 	=> array(
+		"type" 	=> "DATETIME"
+	),
 );
+ 

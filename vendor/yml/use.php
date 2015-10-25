@@ -15,6 +15,8 @@
 					}else{
 						$type = "vendor/lib"; 
 					}
+				}elseif ($type == "model") { 
+						$type = "web/model/backup.sql";  
 				}
 				$yml = $type."/".$file.".yml";
 				return $result_yml = Spyc::YAMLLoad($yml);
@@ -782,11 +784,15 @@
 			  $file = $argv[1];
 			  echo json_encode (spyc_load_file ($file));
 			} while (0);
-		//$result_yml = Spyc::YAMLLoad("app/config/parameters.yml");
+
+			function loadYmlFile($root){
+				return Spyc::YAMLLoad($root);
+			}
+		/*$result_yml = Spyc::YAMLLoad("web/model/buckup.sql/framwork_db.yml");
 		//$result_yml = json_decode(json_encode($result_yml));
-			//print "<pre>";
-			//var_dump($result_yml);
-			//print "</pre>";
-			//print "data base : ".$result_yml->parameters->database_name;
+			print "<pre>";
+			var_dump($result_yml);
+			print "</pre>";
+			//print "data base : ".$result_yml->parameters->database_name;*/
 
 ?>

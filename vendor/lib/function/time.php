@@ -10,6 +10,9 @@
 			return $data;
 
 		}
+		function ArrayToDate($array){
+			return $array["y"].'-'.$array["m"].'-'.$array["d"];
+		}
 		function array_date($date,$type=null){
 
 			$result = array();
